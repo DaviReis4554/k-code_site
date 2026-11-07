@@ -5,73 +5,55 @@ document.addEventListener('mousemove', function(e) {
     document.body.style.backgroundPosition = `${x}px ${y}px`;
 });
 
-// --- SISTEMA DE CONTADOR GLOBAL DE DOWNLOADS ---
+// --- CONTADOR GLOBAL DE DOWNLOADS REAL ---
 document.addEventListener('DOMContentLoaded', function() {
-    // Definimos um nome único para o seu projeto no contador público
-    const namespace = 'kcode-ide-davi';
-    const key = 'downloads';
+    // Namespace e chave únicos para o seu projeto no servidor global
+    const namespace = 'kcode_ide_davi_downloads';
+    const key = 'total';
 
     const counterElements = document.querySelectorAll('#globalDownloadCount');
 
-    // 1. Função para buscar o valor atual lá no servidor global
-    function fetchGlobalCount() {
-        fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/`)
-            .then(response => {
-                if (!response.ok) {
-                    // Se for a primeira vez e o namespace não existir ainda, criamos ele
-                    return createCounter();
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data && typeof data.count === 'number') {
-                    updateDisplay(data.count);
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao buscar contador global:', error);
-            });
-    }
-
-    // Cria o contador na API caso seja a primeira execução
-    function createCounter() {
-        return fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-            .then(res => res.json())
-            .then(data => {
-                // Como o "up" já incrementou 1 na criação, subtraímos 1 ou apenas exibimos se preferir
-                return { count: data.count || 1 };
-            });
-    }
-
-    // 2. Atualiza o texto na tela de todas as páginas
-    function updateDisplay(count) {
+    // Função para atualizar o número em todas as telas da página
+    function updateDisplay(value) {
         counterElements.forEach(el => {
-            el.textContent = count;
+            el.textContent = value;
         });
     }
 
-    // 3. Função chamada quando clica para baixar uma versão específica
-    function incrementGlobalCount() {
-        fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-            .then(response => response.json())
-            .then(data => {
-                if (data && typeof data.count === 'number') {
-                    updateDisplay(data.count);
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao atualizar contador global:', error);
-            });
-    }
+    // 1. Ao carregar a página, apenas BUSCA o valor atual do servidor (sem somar nada sozinho)
+    fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data && typeof data.value === 'number') {
+                updateDisplay(data.value);
+            } else {
+                // Se o contador ainda não existir no servidor, cria ele com 0
+                return fetch(`https://api.countapi.xyz/create?namespace=${namespace}&key=${key}&value=0`)
+                    .then(res => res.json())
+                    .then(createData => {
+                        updateDisplay(createData.value || 0);
+                    });
+            }
+        })
+        .catch(err => {
+            console.log('Erro ao carregar contador:', err);
+        });
 
-    // Busca o valor atual assim que a página carrega
-    fetchGlobalCount();
-
-    // 4. Monitora cliques apenas nos cards de versões específicas
+    // 2. SÓ SOMA +1 quando o usuário clicar de fato em um botão/card de versão para baixar
     const versionCards = document.querySelectorAll('.track-download');
     versionCards.forEach(card => {
         card.addEventListener('click', function() {
-            incrementGlobalCount();
+            // Faz a requisição de hit (incrementar +1) no servidor global
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && typeof data.value === 'number') {
+                        updateDisplay(data.value);
+                    }
+                })
+                .catch(err => {
+                    console.log('Erro ao registrar download:', err);
+                });
         });
     });
 });
