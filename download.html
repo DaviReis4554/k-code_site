@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Code IDE — Download & Versões</title>
     
+    <!-- Ícone na aba do navegador -->
+    <link rel="icon" href="logos/site-logo.png" type="image/png">
+    
     <!-- Chamando o arquivo CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="logos/site-logo.png" type="image/png">
 </head>
 <body>
 
@@ -33,7 +34,7 @@
                 <p>Nos ajude a melhorar o K-Code IDE! Seja um colaborador no GitHub editando, aprimorando e melhorando o programa.</p>
                 
                 <div class="buttons-container">
-                    <a href="https://github.com/DaviReis4554" target="_blank" class="btn btn-github">
+                    <a href="https://github.com/DaviReis4554/K-Code" target="_blank" class="btn btn-github">
                         <img src="logos/github-logo.png" alt="GitHub">
                         Ver código-fonte
                     </a>
@@ -57,7 +58,7 @@
         
         <div class="versions-grid">
             <!-- Versão 1.0 -->
-            <a href="versions/kcode 1_0_0.exe" class="version-card" download>
+            <a href="versions/kcode 1_0_0.exe" class="version-card track-download" download>
                 <div class="version-icon">
                     <img src="logos/site-logo.png" alt="Logo </>">
                 </div>
@@ -66,7 +67,7 @@
             </a>
 
             <!-- Versão Beta -->
-            <a href="versions/k-code beta.exe" class="version-card" download>
+            <a href="versions/k-code beta.exe" class="version-card track-download" download>
                 <div class="version-icon">
                     <img src="logos/site-logo.png" alt="Logo </>">
                 </div>
@@ -75,7 +76,7 @@
             </a>
 
             <!-- Versão Alpha -->
-            <a href="versions/k-code alpha.exe" class="version-card" download>
+            <a href="versions/k-code alpha.exe" class="version-card track-download" download>
                 <div class="version-icon">
                     <img src="logos/site-logo.png" alt="Logo </>">
                 </div>
@@ -84,6 +85,14 @@
             </a>
         </div>
     </section>
+
+    <!-- RODAPÉ COM O CONTADOR NO FINAL -->
+    <footer class="site-footer">
+        <div class="download-counter-footer">
+            <span> Total de downloads realizados:</span>
+            <strong id="globalDownloadCount">0</strong>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

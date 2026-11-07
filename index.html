@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K-Code IDE — Baixar o Programa</title>
     
+    <!-- Ícone na aba do navegador -->
+    <link rel="icon" href="logos/site-logo.png" type="image/png">
+    
     <!-- Chamando o arquivo CSS separado -->
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="logos/site-logo.png" type="image/png">
 </head>
 <body>
 
@@ -27,7 +28,7 @@
             <p>O K-Code IDE é um ambiente de desenvolvimento integrado projetado com foco em C, mas com suporte a diversas linguagens de programação. O projeto foi integralmente construído utilizando o Anthropic ClaudeAI.</p>
             
             <div class="buttons-container">
-                <!-- Botão que agora redireciona para a página de download -->
+                <!-- Botão que redireciona para a página de download -->
                 <a href="download.html" class="btn btn-windows" id="downloadBtn">
                     <img src="logos/windows-logo.png" alt="Windows">
                     Baixar para Windows
@@ -136,6 +137,14 @@
             </div>
         </div>
     </section>
+
+    <!-- RODAPÉ COM O CONTADOR NO FINAL -->
+    <footer class="site-footer">
+        <div class="download-counter-footer">
+            <span> Total de downloads realizados:</span>
+            <strong id="globalDownloadCount">0</strong>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

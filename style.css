@@ -435,3 +435,32 @@ main {
         justify-content: center;
     }
 }
+
+/* --- ESTILO DO RODAPÉ E CONTADOR DE DOWNLOADS --- */
+.site-footer {
+    background-color: #161b22;
+    border-top: 1px solid #30363d;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.download-counter-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-counter-footer strong {
+    color: #58a6ff;
+    font-size: 1.15rem;
+}
