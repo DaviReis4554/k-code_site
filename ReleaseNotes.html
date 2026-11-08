@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Code IDE — Release Notes</title>
+    
+    <!-- Ícone na aba do navegador -->
+    <link rel="icon" href="logos/site-logo.png" type="image/png">
+    
+    <!-- Chamando o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DO TOPO -->
+    <header>
+        <div class="logo-area">
+            <img src="logos/site-logo.png" alt="Logo">
+            <span>K-Code IDE</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="download.html">Downloads</a></li>
+                <li><a href="ReleaseNotes.html">Release Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main style="flex-direction: column; padding: 60px 40px; max-width: 900px; margin: 0 auto; width: 100%;">
+        
+        <!-- Cabeçalho da Seção -->
+        <div style="text-align: center; margin-bottom: 40px; width: 100%;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 10px; color: #ffffff;">Notas de Lançamento</h1>
+            <p style="font-size: 1.15rem; color: #8b949e;">Acompanhe todas as novidades, correções de bugs e melhorias implementadas em cada versão do K-Code IDE.</p>
+        </div>
+
+        <!-- LISTA DE QUADROS DE VERSÕES -->
+        <div style="display: flex; flex-direction: column; gap: 25px; width: 100%;">
+
+            <!-- Quadrado da Versão 1.1.0 -->
+            <div style="background-color: #161b22; border: 1px solid #30363d; border-radius: 16px; padding: 35px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);">
+                <h2 style="color: #58a6ff; font-size: 1.8rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                    K-Code 1.1.0 
+                    <span style="font-size: 0.9rem; background-color: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; color: #8b949e; font-weight: normal;">Versão Estável</span>
+                </h2>
+                <ul style="color: #8b949e; padding-left: 20px; line-height: 1.7; font-size: 1.05rem;">
+                    <li>Salvamento automático do estado do compilador, restaurando a última configuração utilizada ao reabrir a IDE.</li>
+                    <br>
+                    <li>Animações de responsividade aprimoradas, proporcionando transições mais fluidas e menos travamentos.</li>
+                    <br>
+                    <li>Sistema de busca global em todos os arquivos do projeto (Ctrl + Shift + F), com resultados em uma nova aba do painel inferior e navegação direta até a linha correspondente.</li>
+                    <br>
+                    <li>Sistema de salvamento automático configurável (desativado, ao perder o foco ou a cada intervalo de tempo), além da opção Salvar tudo (Ctrl + Shift + S).</li>
+                    <br>
+                    <li>Histórico de arquivos e pastas recentes, permitindo reabrir rapidamente projetos utilizados anteriormente.</li>
+                    <br>
+                    <li>Paleta de comandos integrada (Ctrl + Shift + P), centralizando as principais funcionalidades e ações da IDE em uma única ferramenta de busca.</li>
+                    <br>
+                    <li>Minimapa integrado à lateral do editor para facilitar a visualização e navegação pelo código.</li>
+                    <br>
+                    <li>Terminal interativo integrado ao painel inferior, com suporte a CMD, PowerShell e Bash para execução de comandos diretamente na IDE.</li>
+                    <br>
+                    <li>Fechamento automático de parênteses, chaves e aspas, com destaque dos delimitadores correspondentes.</li>
+                    <br>
+                    <li>Correção de Bugs e melhorias gerais de estabilidade.</li>
+                </ul>
+            </div>
+
+            <!-- Quadrado da Versão 1.0.0 -->
+            <div style="background-color: #161b22; border: 1px solid #30363d; border-radius: 16px; padding: 35px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);">
+                <h2 style="color: #58a6ff; font-size: 1.8rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                    K-Code 1.0.0 
+                    <span style="font-size: 0.9rem; background-color: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; color: #8b949e; font-weight: normal;">Versão Estável</span>
+                </h2>
+                <ul style="color: #8b949e; padding-left: 20px; line-height: 1.7; font-size: 1.05rem;">
+                    <li>Lançamento oficial da IDE focada em C e suporte a multiplataformas.</li>
+                    <br>
+                    <li>Suporte robusto a múltiplas linguagens, sendo elas:
+                        <ul style="padding-left: 20px; list-style-type: disc;">
+                            <li>C</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>JSON</li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>Ferramentas integradas de compilação, execução e diagnóstico de erros (Problems), além de validação e formatação automática para arquivos JSON.</li>
+                    <br>
+                    <li>Servidor local integrado com atualização automática (live reload) no navegador para páginas HTML, CSS e JS.</li>
+                    <br>
+                    <li>Gerenciador de arquivos completo com explorador lateral, suporte a arrastar e soltar (drag and drop), e ferramenta para empacotar scripts Python em executáveis<br> .exe via PyInstaller.</li>
+                    <br>
+                    <li>Interface moderna e customizável com suporte a múltiplos temas visuais e margem interativa com recolhimento de blocos (code folding).</li>
+                    <br>
+                    <li>Correção de Bugs</li>
+                </ul>
+            </div>
+
+            <!-- Quadrado da Versão Beta -->
+            <div style="background-color: #161b22; border: 1px solid #30363d; border-radius: 16px; padding: 35px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);">
+                <h2 style="color: #58a6ff; font-size: 1.8rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                    K-Code Beta 
+                    <span style="font-size: 0.9rem; background-color: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; color: #8b949e; font-weight: normal;">Em Testes</span>
+                </h2>
+                <ul style="color: #8b949e; padding-left: 20px; line-height: 1.7; font-size: 1.05rem;">
+                    <li>Correção de bugs na indentação automática.</li>
+                    <li>Adição de atalhos rápidos para compilação.</li>
+                </ul>
+            </div>
+
+            <!-- Quadrado da Versão Alpha -->
+            <div style="background-color: #161b22; border: 1px solid #30363d; border-radius: 16px; padding: 35px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);">
+                <h2 style="color: #58a6ff; font-size: 1.8rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                    K-Code Alpha 
+                    <span style="font-size: 0.9rem; background-color: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; color: #8b949e; font-weight: normal;">Experimental</span>
+                </h2>
+                <ul style="color: #8b949e; padding-left: 20px; line-height: 1.7; font-size: 1.05rem;">
+                    <li>Versão inicial de testes estruturais da IDE.</li>
+                    <li>Estruturação básica do editor de código em C.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Botão de Voltar -->
+        <div style="margin-top: 35px; text-align: left; width: 100%;">
+            <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
